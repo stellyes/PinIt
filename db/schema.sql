@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS pinit_db;
+CREATE DATABASE pinit_db;
