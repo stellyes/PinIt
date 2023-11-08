@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test View</title>
+    <!-- Linking Google Maps API -->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsYiqosklWD2b6tlht6yGiurSUdeFKvZE&callback=console.debug&libraries=maps,marker&v=beta">
+    </script>
+    <!-- Linking Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <nav id="site-nav" class="navbar">
+        <div class="container-fluid">
+          <a id="site-nav-title" class="navbar-brand">PinIt</a>
+          <button id="site-login-button" class="d-flex btn" type="submit">
+            Login
+          </button>
+        </div>
+      </nav>
+      <div id="page-content" class="container my-5">
+        <div class="row justify-content-center">
+          <div id="saved-locations" class="col-3">
+            <span id="saved-locations-title" class="text-center">
+                <p class="text-center">Locations</p>
+            </span>
+            <ul id="saved-locations-list"> 
+                <li id="search-history-item" class="my-3">
+                    <p class="text-center">
+                        Saved location here
+                    </p>
+                </li>
+                <li id="search-history-item" class="my-3">
+                    <p class="text-center">
+                        Saved location here
+                    </p>
+                </li>
+                <li id="search-history-item" class="my-3">
+                    <p class="text-center">
+                        Saved location here
+                    </p>
+                </li>
+                <li id="search-history-item" class="my-3">
+                    <p class="text-center">
+                        Saved location here
+                    </p>
+                </li>
+                <li id="search-history-item" class="my-3">
+                    <p class="text-center">
+                        Saved location here
+                    </p>
+                </li>
+                <li id="search-history-item" class="my-3">
+                    <p class="text-center">
+                        Saved location here
+                    </p>
+                </li>
+            </ul>
+          </div>
+          <div id="application-ui" class="col-8">
+            <div id="map">
+              <gmp-map center="37.69999694824219,-122.45973205566406" zoom="14" map-id="ApplicationInterface">
+                <gmp-advanced-marker position="37.69999694824219,-122.45973205566406" title="My location">
+                </gmp-advanced-marker>
+              </gmp-map>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+  </body>
+</html>
