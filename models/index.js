@@ -7,4 +7,16 @@ User.hasOne(Location, {
     onDelete: 'CASCADE'
 });
 
-Location.belongsTo
+Location.belongsTo(User, {
+    foreignKey: 'user_id',
+})
+
+Location.belongsTo(Category, {
+    foreignKey: 'category_id'
+})
+
+module.exports = {
+    Location,
+    User,
+    Category
+};
