@@ -9,11 +9,15 @@ User.hasOne(Location, {
 
 Location.belongsTo(User, {
     foreignKey: 'user_id',
-})
+});
 
 Location.belongsTo(Category, {
     foreignKey: 'category_id'
-})
+});
+
+Category.hasMany(Location, {
+    foreignKey: 'category_id'
+});
 
 module.exports = {
     Location,

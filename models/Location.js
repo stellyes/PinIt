@@ -12,11 +12,11 @@ Location.init(
             autoIncrement: true,
         },
         lat: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DOUBLE,
             allowNull: false,
         },
-        long: {
-            type: DataTypes.INTEGER,
+        lon: {
+            type: DataTypes.DOUBLE,
             allowNull: false,
         },
         location_name: {
