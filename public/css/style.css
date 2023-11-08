@@ -11,7 +11,8 @@ body {
 }
 
 #map {
-    height: 100%;
+    height: 55%;
+
 }
 
 #site-nav {
@@ -22,12 +23,16 @@ body {
     color: var(--primary);
 }
 
+#save-location-button,
+#location-search-button,
 #site-login-button {
     background-color: var(--primary);
     border-color: var(--tertiary);
     color:var(--quatrinary);
 }
 
+#save-location-button:hover,
+#location-search-button:hover,
 #site-login-button:hover {
     background-color: var(--secondary);
     border-color: var(--tertiary);
@@ -51,4 +56,15 @@ body {
 #saved-locations-list {
     list-style: none;
     margin-left: -30px;
+}
+
+#save-location {
+    width: 90%;
+    background-color: var(--tertiary);
+    border: 3px solid var(--shadow);
+    border-radius: 10px;
+}
+
+#save-location-title {
+    letter-spacing: 0.1rem;
 }
