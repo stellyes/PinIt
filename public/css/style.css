@@ -43,6 +43,15 @@ body {
     max-width: 55%;
 }
 
+#landing-view-content {
+    min-width: 750px;
+}
+
+#landing-view-header {
+    font-style: italic;
+    font-size: 75px;
+}
+
 #landing-view,
 #application-ui,
 #saved-locations {
