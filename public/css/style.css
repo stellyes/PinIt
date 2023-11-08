@@ -39,6 +39,11 @@ body {
     color:var(--quatrinary);
 }
 
+#landing-view {
+    max-width: 55%;
+}
+
+#landing-view,
 #application-ui,
 #saved-locations {
     margin: 0px 15px;
