@@ -23,19 +23,21 @@ body {
     color: var(--primary);
 }
 
+#update-user-button,
 #save-location-button,
 #location-search-button,
 #site-login-button {
     background-color: var(--primary);
-    border-color: var(--tertiary);
+    border-color: var(--shadow);
     color:var(--quatrinary);
 }
 
+#update-user-button:hover,
 #save-location-button:hover,
 #location-search-button:hover,
 #site-login-button:hover {
-    background-color: var(--secondary);
-    border-color: var(--tertiary);
+    background-color: var(--tertiary);
+    border-color: var(--shadow);
     color:var(--quatrinary);
 }
 
@@ -43,15 +45,19 @@ body {
     max-width: 55%;
 }
 
+#profile-veiw-content,
 #landing-view-content {
     min-width: 750px;
 }
 
+#saved-pins,
+#profile-view-header,
 #landing-view-header {
     font-style: italic;
     font-size: 75px;
 }
 
+#profile-view,
 #landing-view,
 #application-ui,
 #saved-locations {
@@ -67,9 +73,14 @@ body {
     font-weight: bold;
 }
 
+#saved-pins-list,
 #saved-locations-list {
     list-style: none;
     margin-left: -30px;
+}
+
+#saved-pin {
+    font-size: medium;
 }
 
 #save-location {
