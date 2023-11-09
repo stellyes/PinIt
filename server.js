@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 const sess = {
   secret: "PinIt",
   cookie: {
-    // Two weeks before login expires
+    // Two weeks (in ms) before login expires
     maxAge: 1209600000,
   },
   resave: false,
