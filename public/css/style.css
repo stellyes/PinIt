@@ -21,7 +21,20 @@ body {
     background-color: #ecf0f3;
     border-radius: 15px;
     box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+    /* background-color: rgb(239, 73, 73); */
+    position: relative;
+    animation-name: moveIn;
+    animation-duration: 4s;
+    /* animation: moveIn 5s; */
 }
+
+@keyframes moveIn {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+  }
 
 .logo {
     width: 80px;
