@@ -41,22 +41,27 @@ body {
     color:var(--quatrinary);
 }
 
+#login-view,
 #landing-view {
     max-width: 55%;
 }
 
+
+#login-view-content,
 #profile-veiw-content,
 #landing-view-content {
     min-width: 750px;
 }
 
 #saved-pins,
+#login-view-header,
 #profile-view-header,
 #landing-view-header {
     font-style: italic;
     font-size: 75px;
 }
 
+#login-view,
 #profile-view,
 #landing-view,
 #application-ui,
@@ -68,6 +73,7 @@ body {
     box-shadow: 3px 3px 6px var(--shadow);
     border-radius: 15px;
 }
+
 
 #saved-locations-title {
     font-weight: bold;
@@ -92,4 +98,8 @@ body {
 
 #save-location-title {
     letter-spacing: 0.1rem;
+}
+
+#form-field {
+    width: 100%;
 }
