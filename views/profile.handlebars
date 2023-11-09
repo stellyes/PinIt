@@ -1,0 +1,26 @@
+<div id="profile-view" class="row" style="margin: 6%">
+    <div id="profile-view-details" class="col-8 my-3 align-items-center  justify-content-center">
+        <h1 id="profile-view-header" class="text-center">Your PinIt Profile</h1>
+        <div class="m-4">
+            <label for="updateEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="updateEmail" placeholder="{{email}}">
+        </div>
+        <div class="m-4">
+            <label for="updateUsername" class="form-label">Username</label>
+            <input type="text" class="form-control" id="updateUsername" placeholder="{{usernae}}">
+        </div>
+        <div class="m-4">
+            <label for="updatePassword" class="form-label">Password</label>
+            <input type="text" class="form-control" id="updatePassword" placeholder="Update your password">
+        </div>
+        <button id="update-user-button" type="button" class="btn btn-dark mx-5 my-4" style="width: 88%;">Update info</button>
+    </div>
+    <div id="saved-pins" class="col-4 my-3 align-items-center text-center">
+        <h1 id="saved-pins-header">Saved Pins</h1>
+        <ul id="saved-pins-list"> 
+            {{#each pins as |pin|}}
+                {{> pin-details}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
