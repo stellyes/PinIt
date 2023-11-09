@@ -1,0 +1,45 @@
+<div id="page-content" class="container my-5">
+        <div class="row justify-content-center">
+          <div id="saved-locations" class="col-3">
+            <span id="saved-locations-title" class="text-center">
+                <p class="text-center my-3">Locations</p>
+            </span>
+            <ul id="saved-locations-list">
+                {{#each locations as |location|} 
+                {{> location-details}}
+                {{/each}}
+            </ul>
+          </div>
+          <div id="application-ui" class="col-8 justify-content-center">
+            <div id="map" class="my-3">
+              <gmp-map center="{{user.lat}},{{user.lon}}" zoom="14" map-id="ApplicationInterface">
+                <gmp-advanced-marker position="{{user.lat}},{{user.lon}}" title="User's Home">
+                </gmp-advanced-marker>
+              </gmp-map>
+            </div>
+            <div id="search-bar" class="input-group input-group-sm my-3">
+              <input type="text" class="form-control" aria-label="location-search" aria-describedby="location-search-button" placeholder="Enter a location here">
+              <button class="btn btn-outline-secondary" type="button" id="location-search-button">Search</button>
+            </div>
+            <div id="save-location" class="row mx-5 p-1 align-items-center">
+              <div class="col-12 text-center align-items-center mt-3">
+                <p id="save-location-title">Save your location!</p>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control form-control-sm" placeholder="Enter a location name" aria-label="location-name-input">
+              </div>
+              <div class="col-5">
+                <select class="form-select form-select-sm" id="floatingSelectGrid" aria-label="Category selection">
+                  <option selected>Select a category</option>
+                  {{#each categories as |category|}}
+                    {{> category-details}}
+                  {{/each}}
+                </select>
+              </div>
+              <div class="col-2">
+                <button type="button" id="save-location-button" class="btn btn-secondary btn-sm my-2">Save!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

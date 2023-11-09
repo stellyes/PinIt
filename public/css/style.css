@@ -116,3 +116,58 @@ body {
         padding: 40px 15px 15px 15px;
     }
 }
+
+:root {
+    --primary: #FFF2D8;
+    --secondary: #EAD7BB;
+    --tertiary: #BCA37F;
+    --quatrinary: #113946;
+    --shadow: #635644;
+}
+
+body {
+    background: var(--primary);
+}
+
+#map {
+    height: 100%;
+}
+
+#site-nav {
+    background: var(--quatrinary);
+}
+
+#site-nav-title {
+    color: var(--primary);
+}
+
+#site-login-button {
+    background-color: var(--primary);
+    border-color: var(--tertiary);
+    color:var(--quatrinary);
+}
+
+#site-login-button:hover {
+    background-color: var(--secondary);
+    border-color: var(--tertiary);
+    color:var(--quatrinary);
+}
+
+#application-ui,
+#saved-locations {
+    margin: 0px 15px;
+    min-height: 500px;
+    background: var(--secondary);
+    border: 3px solid var(--tertiary);
+    box-shadow: 3px 3px 6px var(--shadow);
+    border-radius: 15px;
+}
+
+#saved-locations-title {
+    font-weight: bold;
+}
+
+#saved-locations-list {
+    list-style: none;
+    margin-left: -30px;
+}
