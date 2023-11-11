@@ -22,6 +22,7 @@ const sess = {
   store: new SequelizeStore({
     db: sequelize,
   }),
+  loggedIn: false
 };
 
 // Create handlebars instance
