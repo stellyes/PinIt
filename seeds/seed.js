@@ -22,31 +22,31 @@ const seedData = async () => {
       },
     ]);
 
-    // // Seed Categories
-    // const hikesCategory = await Category.create({
-    //   name: 'Hikes',
-    // });
+    // Seed Categories
+    const hikesCategory = await Category.create({
+      name: 'Hikes',
+    });
 
-    // const restaurantCategory = await Category.create({
-    //   name: 'Restaurant',
-    // });
+    const restaurantCategory = await Category.create({
+      name: 'Restaurant',
+    });
 
-    // // Seed Locations
-    // const sanFranciscoLocation1 = await Location.create({
-    //   lat: 37.7749,
-    //   lon: -122.4194,
-    //   location_name: 'Hike Spot 1',
-    //   user_id: users[0].id,
-    //   category_id: hikesCategory.id,
-    // });
+    // Seed Locations
+    const sanFranciscoLocation1 = await Location.create({
+      lat: 37.7749,
+      lon: -122.4194,
+      location_name: 'Hike Spot 1',
+      user_id: users[0].id,
+      category_id: hikesCategory.id,
+    });
 
-    // const sanFranciscoLocation2 = await Location.create({
-    //   lat: 37.7749,
-    //   lon: -122.4194,
-    //   location_name: 'Restaurant 1',
-    //   user_id: users[1].id,
-    //   category_id: restaurantCategory.id,
-    // });
+    const sanFranciscoLocation2 = await Location.create({
+      lat: 37.7749,
+      lon: -122.4194,
+      location_name: 'Restaurant 1',
+      user_id: users[1].id,
+      category_id: restaurantCategory.id,
+    });
 
     console.log('Seed data inserted successfully.');
   } catch (error) {
