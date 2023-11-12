@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Image Slider in the background</title>
+</head>
+
+<body onload="slider()">
+    <h1>Thought this was going to be cool</h1>
+
+    <div class="banner">
+        <div class="slider">
+            <img src="images/restaunt_in_mountains.jpeg" alt="Image of restaurant in mountains" id="slideImg">
+        </div>
+        <div class="overlay">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="images/hikeman_01_4x3.gif" alt="">
+                </div>
+                <div class="menu-icons">
+                    <img src="images/user_login_white.png" alt="">
+                    <img src="images/white_shopping_cart.png" alt="">
+                    <img src="images/hamburger-menu.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="content">
+                <h1>Let see what this does in background</h1>
+                <h3>Anything else<br> or anything more<br>oranything atall</h2>
+
+                    <div>
+                        <button type="button">Search For More</button>
+                        <button type="button" class="btn-2">Save any time</button>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+<script>
+    var slideImg = document.getElementById("slideImg");
+    var images = new Array(
+        "images/cecconi-s-dumbo-649b48347b82e.jpeg",
+        "images/restaunt_in_mountains.jpeg",
+        "images/the-wave19-feature.webp",
+        "images/attachment-Hiking-Michael-Chiara-Unsplash.jpeg"
+    );
+    console.log(images)
+    var len = images.length;
+    var i = 0;
+    function slider(){
+        if(i > len-1){
+            i=0;
+        }
+        slideImg.src = images[i];
+        i++;
+        setTimeout('slider()',3000);
+    }
+</script>
+</body>
+
+</html>
