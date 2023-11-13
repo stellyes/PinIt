@@ -86,6 +86,15 @@
     color: white;
 }
 
+.header {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to right, #F5F5DC, #FDB813);
+    color: #000; /* Set text color to ensure readability */
+    margin: 0;
+    transition: background 2s; /* Transition duration for background color change */
+}
+
 .content h1 {
     font-size: 60px;
 }
