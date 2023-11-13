@@ -128,9 +128,11 @@ router.post("/login", async (req, res) => {
         return;
       }
   
-      // Set req.session.loggedIn to userData.id so that 
-      // home-routes can access locations from logged in user
-      req.session.loggedIn = userData.id;
+      req.session.save(() => {
+        // Set req.session.loggedIn to userData.id so that 
+        // home-routes can access locations from logged in user
+        req.session.loggedIn = userData.id;
+      });
       
       res.status(200).json({ code: 200 });
     } catch (err) {
