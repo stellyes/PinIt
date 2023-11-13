@@ -42,4 +42,29 @@ router.get('/login', (req, res) => {
   }
 });
 
+router.get('/landing', (req, res) => {
+  try {
+    res.render('landing');
+  } catch {
+    res.send("<h1>500 Internal Server Error</h1>");
+  }
+});
+
+router.get('/signup', (req, res) => {
+  try {
+    res.render('signup');
+  } catch {
+    res.send("<h1>500 Internal Server Error</h1>");
+  }
+});
+
+router.get('/signup', (req, res) => {
+  try {
+    res.render('signup');
+  } catch {
+    res.send("<h1>500 Internal Server Error</h1>");
+  }
+});
+
+
 module.exports = router;
