@@ -1,11 +1,12 @@
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
 const { User, Category, Location } = require('../models');
 
 const seedData = async () => {
   try {
     await sequelize.sync({
-        "force": true
+      "force": true
     });
 
     // Seed Users
@@ -13,12 +14,13 @@ const seedData = async () => {
       {
         name: 'User 1',
         email: 'user1@example.com',
-        password: 'password1',
+        password: await bcrypt.hash('password1', 10),
       },
       {
         name: 'User 2',
         email: 'user2@example.com',
-        password: 'password2',
+        password: await bcrypt.hash('password2', 10),
+
       },
     ]);
 
