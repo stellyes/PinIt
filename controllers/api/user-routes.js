@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const { User, Location, Category } = require("../../models");
 
 // /api/users/ routes
@@ -37,7 +38,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // Create new user
-router.post("/", async (req, res) => {
+router.post("/signup", async (req, res) => {
     try {
         const userData = await User.create(req.body);
         res.status(200).json(userData);
@@ -89,6 +90,53 @@ router.delete("/:id", async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+// Login for user
+router.post("/login", async (req, res) => {
+    try {
+      const userData = await User.findOne({
+        where: {
+          email: req.body.email,
+        },
+      });
+  
+      if (!userData) {
+        res
+          .status(404)
+          .json(
+            { 
+                code: 404, 
+                message: "Login failed. Incorrect email/password" 
+        });
+        return;
+      }
+  
+      // Validate password against encrypted version
+      const validPassword = await bcrypt.compare(
+        req.body.password,
+        userData.password
+      );
+  
+      if (!validPassword) {
+        res
+          .status(400)
+          .json(
+            { 
+                code: 400, 
+                message: "Login failed. Incorrect email/password" 
+        });
+        return;
+      }
+  
+      // Set req.session.loggedIn to userData.id so that 
+      // home-routes can access locations from logged in user
+      req.session.loggedIn = userData.id;
+      
+      res.status(200).json({ code: 200 });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
     
 module.exports = router;
     
