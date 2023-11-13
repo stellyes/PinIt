@@ -9,7 +9,7 @@
 </head>
 
 <body onload="slider()">
-    <h1>Thought this was going to be cool</h1>
+    <h1 class="header">Welcome to PinIt. Search it, Save it Share it.</h1>
 
     <div class="banner">
         <div class="slider">
@@ -42,12 +42,10 @@
 
 <script>
     var slideImg = document.getElementById("slideImg");
-    var images = new Array(
-        "images/cecconi-s-dumbo-649b48347b82e.jpeg",
+    var images = ["images/cecconi-s-dumbo-649b48347b82e.jpeg",
         "images/restaunt_in_mountains.jpeg",
         "images/the-wave19-feature.webp",
-        "images/attachment-Hiking-Michael-Chiara-Unsplash.jpeg"
-    );
+        "images/attachment-Hiking-Michael-Chiara-Unsplash.jpeg"];
     console.log(images)
     var len = images.length;
     var i = 0;
@@ -57,7 +55,7 @@
         }
         slideImg.src = images[i];
         i++;
-        setTimeout('slider()',3000);
+        setTimeout('slider()',5000);
     }
 </script>
 </body>
