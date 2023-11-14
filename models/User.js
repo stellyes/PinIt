@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-// const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 const sequelize = require('../config/connection');
 
 class User extends Model { }
@@ -31,9 +31,35 @@ User.init(
         len: [8],
       },
     },
+    lat: {
+      type: DataTypes.DOUBLE,
+      allowNull: false,
+      validate: {
+        isFloat: true
+      }
+    },
+    lon: {
+      type: DataTypes.DOUBLE,
+      allowNull: false,
+      validate: {
+        isFloat: true
+      }
+    }
   },
   {
     hooks: {
+      beforeBulkCreate: async (newUserDataGroup) => {
+        for (const newUserData of newUserDataGroup) {
+          newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        }
+        return newUserDataGroup;
+      },
+      beforeBulkUpdate: async (updatedUserDataGroup) => {
+        for (const updatedUserData of updatedUserDataGroup) {
+          updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        }
+        return newUserDataGroup;
+      },
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
