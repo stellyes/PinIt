@@ -17,7 +17,7 @@ loginForm.addEventListener("submit", function(event) {
   })
   .then(function(data) {
     if (data.code == 200) {
-      window.location.href = "/";
+      window.location = "/";
     }
     else {
       loginUserButton.classList.remove("btn-dark");

@@ -144,6 +144,7 @@ body {
     color: var(--primary);
 }
 
+#create-user-button,
 #update-user-button,
 #save-location-button,
 #location-search-button,
@@ -153,6 +154,7 @@ body {
     color:var(--quatrinary);
 }
 
+#create-user-button:hover,
 #update-user-button:hover,
 #save-location-button:hover,
 #location-search-button:hover,

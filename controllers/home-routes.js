@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Location } = require("../models");
+const { Location, User, Category } = require("../models");
 const withAuth = require("../utils/withAuth");
 
 // Homepage route
@@ -7,6 +7,7 @@ router.get("/", withAuth, async (req, res) => {
   try {
     // Get locations
     const locationData = await Location.findAll({
+      include: [{ model: User }, { model: Category }],
       where: {
         // user_id is stored as req.sessions.loggedIn
         user_id: req.session.user
