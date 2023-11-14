@@ -9,8 +9,8 @@ router.get("/", withAuth, async (req, res) => {
     const locationData = await Location.findAll({
       include: [{ model: User }, { model: Category }],
       where: {
-        // user_id is stored as req.sessions.loggedIn
-        user_id: req.session.user
+        // user_id is stored as req.sessions.user
+        user_id: 1
       }
     });
 

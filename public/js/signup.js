@@ -67,19 +67,19 @@ function onPlaceChanged() {
 
 const searchBox = new google.maps.places.SearchBox(input);
 
-async function getCoordinates(placeText) {
+function getCoordinates(placeText) {
     // Format text for geocoding
     const formattedText = placeText.replace(" ", "%20");
     const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${formattedText}&key=${key}`
 
-    const response = await fetch(url).then(function(response) {
+    const response = fetch(url, { method: 'GET' }).then(function(response) {
         return response.json();
     }).then(function(data) {
         if (data.status === "OK") {
             const coordinateData = { 
                 code: 200, 
-                lat: data.geometry.location.lat,
-                lon: data.geometry.location.lon
+                lat: data.results[0].geometry.location.lat,
+                lon: data.results[0].geometry.location.lon
             }
             return coordinateData;
         } else {

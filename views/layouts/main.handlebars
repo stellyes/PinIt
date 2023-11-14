@@ -3,16 +3,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test View</title>
-    {{#if loggedIn}}
       <!-- Linking Google Maps API -->
       <script async 
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsYiqosklWD2b6tlht6yGiurSUdeFKvZE&callback=console.debug&libraries=maps,marker&v=beta">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsYiqosklWD2b6tlht6yGiurSUdeFKvZE&callback=console.debug&libraries=maps,places,marker&v=beta">
       </script>
-    {{/if}}
-    <!-- Linking Google Maps API -->
-    <script  
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsYiqosklWD2b6tlht6yGiurSUdeFKvZE&libraries=places">
-    </script>
     <!-- Linking Bootstrap CDN -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
