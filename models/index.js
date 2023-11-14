@@ -3,7 +3,7 @@ const Location = require('./Location');
 const Category = require('./Category');
 
 
-User.hasOne(Location, {
+User.hasMany(Location, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
