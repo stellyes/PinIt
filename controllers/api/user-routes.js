@@ -110,7 +110,7 @@ router.post("/login", async (req, res) => {
         });
         return;
       }
-  
+
       // Validate password against encrypted version
       const validPassword = await bcrypt.compare(
         req.body.password,
@@ -123,7 +123,7 @@ router.post("/login", async (req, res) => {
           .json(
             { 
                 code: 400, 
-                message: "Login failed. Incorrect email/password" 
+                message: "Login failed. Incorrect email/password",
         });
         return;
       }
@@ -131,12 +131,30 @@ router.post("/login", async (req, res) => {
       req.session.save(() => {
         // Set req.session.loggedIn to userData.id so that 
         // home-routes can access locations from logged in user
-        req.session.loggedIn = userData.id;
+        req.session.loggedIn = true;
+        req.session.user = userData.id;
       });
       
-      res.status(200).json({ code: 200 });
+      res
+          .status(200)
+          .json(
+            { 
+                code: 200, 
+                message: "Login successful" 
+        });
     } catch (err) {
       res.status(500).json(err);
+    }
+  });
+
+  router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+      // Remove req.session.loggedIn
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
     }
   });
     

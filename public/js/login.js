@@ -11,19 +11,23 @@ loginForm.addEventListener("submit", function(event) {
     method: 'POST',
     body: JSON.stringify({ email, password }),
     headers: { 'Content-Type': 'application/json' },
+  })
+  .then(function(response) {
+    return response.json()
+  })
+  .then(function(data) {
+    if (data.code == 200) {
+      window.location.href = "/";
+    }
+    else {
+      loginUserButton.classList.remove("btn-dark");
+      loginUserButton.classList.add("btn-danger");
+      loginUserButton.textContent = "Please try again";
+      setTimeout(function () {
+        loginUserButton.classList.remove("btn-danger");
+        loginUserButton.classList.add("btn-dark");
+        loginUserButton.textContent = "Login";
+      }, 4000);
+    }
   });
-
-  if (response.ok) {
-    window.location.href = "/";
-  }
-  else {
-    loginUserButton.classList.remove("btn-dark");
-    loginUserButton.classList.add("btn-danger");
-    loginUserButton.textContent = "Please try again";
-    setTimeout(function () {
-      loginUserButton.classList.remove("btn-danger");
-      loginUserButton.classList.add("btn-dark");
-      loginUserButton.textContent = "Login";
-    }, 4000);
-  }
 });

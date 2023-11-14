@@ -14,13 +14,16 @@ const seedData = async () => {
       {
         name: 'User 1',
         email: 'user1@example.com',
-        password: await bcrypt.hash('password1', 10),
+        password: 'password1',
+        lat: 38.106105, 
+        lon: -122.238852
       },
       {
         name: 'User 2',
         email: 'user2@example.com',
-        password: await bcrypt.hash('password2', 10),
-
+        password: 'password2',
+        lat: 46.584585, 
+        lon: -120.512255
       },
     ]);
 

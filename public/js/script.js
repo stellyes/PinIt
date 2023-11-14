@@ -1,15 +1,5 @@
-document.querySelector("#landing-view-login-button").onclick = function() {
-  window.location.href = "/login";
-};
-
-document.querySelector("#landing-view-signup-button").onclick = function() {
-  window.location.href = "/signup";
-};
-
-
-
-
-
+const loginButton = document.querySelector("#site-login-button");
+const logoutButton = document.querySelector("#site-logout-button");
 
 // The following is stock code provided by the google api
 

@@ -3,8 +3,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test View</title>
+    {{#if loggedIn}}
+      <!-- Linking Google Maps API -->
+      <script async 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsYiqosklWD2b6tlht6yGiurSUdeFKvZE&callback=console.debug&libraries=maps,marker&v=beta">
+      </script>
+    {{/if}}
     <!-- Linking Google Maps API -->
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsYiqosklWD2b6tlht6yGiurSUdeFKvZE&callback=console.debug&libraries=maps,marker&v=beta">
+    <script async 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsYiqosklWD2b6tlht6yGiurSUdeFKvZE&callback=initAutocomplete&libraries=places">
     </script>
     <!-- Linking Bootstrap CDN -->
     <link
@@ -22,12 +29,12 @@
           <a id="site-nav-title" class="navbar-brand">PinIt</a>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a id="navbar-home" class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <!-- Only show option to view profile if user is logged in -->
             {{#if loggedIn}}
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/profile">Profile</a>
+                <a id="navbar-profile" class="nav-link active" aria-current="page" href="/profile">Profile</a>
               </li>
             {{/if}}
           </ul>
@@ -36,7 +43,7 @@
                 Logout
             </button>
           {{else}}
-            <button id="site-login-button" class="d-flex btn" type="submit">
+            <button id="site-login-button" class="d-flex btn" type="button" href="/login">
                 Login
             </button>
           {{/if}}
@@ -49,6 +56,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-      <script src="/js/script.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>
