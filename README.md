@@ -5,7 +5,7 @@ A web application designed to help keep track of a user's favorite spots!
 
 The PinIt app is a response to a need to have one place that would allow us to store our favorite places to visit. The user will be able to search for places to go (for example) hiking, or to a restaurant, or a travel destination and pin that place in their own profile. They will also be able to create Categories of the destinations they've saved and created. Once a user has a set of places they want to share, they will then be able to share it with other users their favorite places.
 
-![img](./public/images/pinit-login-page.png)
+![img](./extra/mockups/landing-profile-with-map.png)
 
 
 
@@ -14,17 +14,39 @@ The PinIt app is a response to a need to have one place that would allow us to s
 This application is deployed to Heroku. Once you get to the page, you can create a login, search for destination and save them off to the side. The last 5 places you Pinned will be presented on the left along with your profile.
 
 Here is the link to the Deployed Application ...
-[PinIt App Is Deployed on Heroku](https://secret-badlands-45389-3dc2c54a2740.herokuapp.com//)
+[PinIt App Is Deployed on Heroku](https://secret-badlands-45389-3dc2c54a2740.herokuapp.com)
 
 
 ## Table of Contents
 
+* [User Stories](#user-stories)
+* [Mockups](#mockups)
 * [Technology Used](#technology-used)
-* [Repo Location](#repo)
-* [Screenshots of Application](screenshots-of-application)
+* [API Research](#api-research)
+* [CSS Framework](#css-framework)
+* [Screenshots of Application and Code Highlights](#coding-highlights)
 * [Learning Points](#learning-points)
 * [Code Snippets](#code-snippets)
+* [Code Challenges](#coding-challenges)
+* [Future Developement](#future-developement)
+* [Repo Location](#repo)
 * [Contact Info](#contact-info)
+
+## User Stories
+These are the user stories that we used in order to plan, and execute on when creating the website. The user story will have 3 componets to them:
+* As a <role>, I want <feature>, so that<reason>. Here is a summary of them.
+
+![img](./extra/readme_images/userstory1.png)
+![img](./extra/readme_images/userstory2.png)
+![img](./extra/readme_images/userstory3.png)
+![img](./extra/readme_images/userstory4.png)
+
+## Mockups
+
+We created mockups of what we wanted. Basically, wanted a location, location history, search bars, a profile that shows us what we have saved and searched before. Also wanted to see login, signup and potential mapping.
+<br>
+![img](./extra/mockups/landing-profile-with-map.png)
+![img](./extra/mockups/mockupofeveryting.png)
 
 ## Technology Used 
 
@@ -35,29 +57,71 @@ Here is the link to the Deployed Application ...
 | Git | [https://git-scm.com/](https://git-scm.com/)     |    
 | NPM and ExpressJs | [https://www.npmjs.com/package/express](https://www.npmjs.com/package/express)|
 | NodeJs | [https://nodejs.org/en](https://nodejs.org/en)|
-| ChatGPT | [https://openai.com/blog/chatgpt](https://openai.com/blog/chatgpt)|
 | GetBootstrap For CSS| [https://getbootstrap.com/](https://getbootstrap.com/)|
-
-There is also javascript, Google Search, and Youtube university. 
-## Repo 
-
-[GitHub Repo for PinIt](https://github.com/stellyes/PinIt)
+| ChatGPT | [https://openai.com/blog/chatgpt](https://openai.com/blog/chatgpt)|
 
 
-## Screenshots of Application
+There is also javascript, Fetch/AJAX, CSS.
+And some useful tools like Google Search, and Youtube university. 
+
+## API Research
+
+We researched many APIs that seemed appropriate for our site to function. Looked up restaurant apis, hiking, vacations, and other search apis. However, they mostly seemed very specific towards a genre of … food, or pointing to someone else site, or even a database of hiking trails … which would be fine, normally, but we found that the google maps API itself was pretty good had providing: restaurants, places of interest and addresses, along with pulling out coordinates and so on with it. So, that is what we stuck with. Here are a few we rejected:
+
+![img](./extra/readme_images/apioresearch.png)
+
+## CSS Framework
+
+Animations in the CSS framework are from using 
+* bootstrap toolkit and
+* css keyframes & animation
+* and lots of styling.
+<br>
+Key frames allow us to control the steps in a css sequence .. stepping through one picture at a time, and by how much. … which you will see shortly.
+<br>
+There two main blocks of code that we would like to highligh, and that is the animation of the login and the background of the page. The login grabs the attention of the user by moving around the page and the background images run like a carousel using javascript and recursion.
+<br>
+![img](./extra/readme_images/animation-login.png)
+![img](./extra/readme_images/backpage-animations.png)
+
+
+
+## Coding Highlights
+
+### This highlight is for the Location and Autocomplete via Google API. As you type, it fills in the location.
+![img](./extra/readme_images/autocomplete-googleapi.png)
 ---
-To get a better picture of what it is doing, or going to do, here are three snapshots to look at.
-
-### Here is the opening page.
-![img](./public/images/pinit-login-page.png)
-and a welcom apge
-![img](./public/images/welcome.png)
+### We are able to parse longitude and latidude from the Google API object here
+![img](./extra/readme_images/parsing-lonlat.png)
 
 ---
+### Here is the code that allows us to know which user is accessing the dashboard
+![img](./extra/readme_images/user-dashboard.png)
+
 ---
-### When in profile page, you can see your saved pins
-![img](./public/images/you%20saved%20pins.png)
+### Displaying the use of handelbars
+![img](./extra/readme_images/apihandlebars.png)
+
 ---
+### 
+![img](./extra/readme_images/apihandlebars.png)
+
+## Coding Challenges
+
+* Git problems, git problems, git problems
+  * Neat git workflows are essential!
+  * `git rebase` is not helpful, even though it may recommend it
+  * Ensuring that every push to main doesn’t conflict with other developer’s code.
+* Project scope vs. Developers
+  * In the design process, clear delegation of development tasks was great at getting us going, but became disjointed when independent work was done
+
+## Future developement
+* Deployment, a working application
+  * Debug handlebars
+  * Attach remaining routes to front-end actionable elements
+* Feature - Share locations, generate a link to view a user’s saved location 
+* Feature - “Locality blogging”, since user’s home location is saved in user data, showing new/exciting posts from users within a ## mile radius!
+* Styling - Having a more engaging UI 
 
 
 
@@ -73,92 +137,10 @@ Git was a complainy thing and stopped us many times from getting code pushed or 
 
 Some things to change are: working on peices of the app seperately and deploy it without handlebars at first. Get it working, ask for help. Being oneline and working together would have helped along with tutors to fix stuff and ASKBCS.
 
-## Code Snippets
 
-There is a lot of stuff to this APP. We used ExpressJS, Sequelize, and Handlebars. Not only that, but there was a heavy usage of Google API for the searches that we needed and MYSQL running in the background.
-
-### Set up of expressjs/sequelize/handlebars is pretty straight forward:
-```js
-const path = require("path");
-const express = require("express");
-const routes = require("./controllers");
-const sequelize = require("./config/connection");
-const session = require("express-session");
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
-const handlebars = require("express-handlebars");
-
-// Set up express instance and port
-const app = express();
-```
-
-### Setting up Models for the DB, we have a User, Location, and Category Model.
-```js
-User.hasOne(Location, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-});
-
-Location.belongsTo(User, {
-    foreignKey: 'user_id',
-});
-
-Location.belongsTo(Category, {
-    foreignKey: 'category_id'
-});
-
-Category.hasMany(Location, {
-    foreignKey: 'category_id'
-});
-```
-
-### Within the User model, we use bcrypt as the hashing algorith for the passwords, along with hooks to update these in the User table.
-```js
-    hooks: {
-      beforeBulkCreate: async (newUserDataGroup) => {
-        for (const newUserData of newUserDataGroup) {
-          newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        }
-        return newUserDataGroup;
-      },
-      beforeBulkUpdate: async (updatedUserDataGroup) => {
-        for (const updatedUserData of updatedUserDataGroup) {
-          updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-        }
-        return newUserDataGroup;
-      },
-```
-
-### Key Routes in this case allow us to route to a login page if not logged in, or /api usage for all the backend db work
-
-```js
-router.use("/", homeRoutes);
-router.use("/api", apiRoutes);
-...
-router.use("/locations", locationRoutes);
-router.use("/categories", categoryRoutes);
-router.use("/users", userRoutes);
-
-```
-
-Not going to throw too much stuff here because there is a lot of code within theapplication. However, hereis a snippet of getting all Categories you stored, along with the locations and user info stored in it, when you hit the landing page.
-```js
-// Get all users
-router.get("/",  async (req, res) => {
-    try {
-        const categoryData = await Category.findAll({
-            include: [{ model: Location }, { model: User }]
-        });
-
-        res.status(200).json(categoryData);
-    } catch(err) {
-        res.status(500).json(err);
-    }
-});
-```
-
----
-
-
+## Repo 
+      
+[GitHub Repo for PinIt](https://github.com/stellyes/PinIt)
 
 
 ## Contact Info
